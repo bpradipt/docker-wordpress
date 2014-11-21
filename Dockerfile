@@ -1,6 +1,6 @@
-FROM ubuntu:latest
-MAINTAINER John Fink <john.fink@gmail.com>
-RUN apt-get update # Fri Oct 24 13:09:23 EDT 2014
+FROM local:utopic
+MAINTAINER Pradipta Kumar Banerjee <pradipta.banerjee@gmail.com>
+RUN apt-get update 
 RUN apt-get -y upgrade
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install mysql-client mysql-server apache2 libapache2-mod-php5 pwgen python-setuptools vim-tiny php5-mysql  php5-ldap
 RUN easy_install supervisor
