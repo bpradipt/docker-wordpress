@@ -1,4 +1,4 @@
-FROM bpradipt/utopic_ppc64le
+FROM local:utopic
 MAINTAINER Pradipta Kumar Banerjee <pradipta.banerjee@gmail.com>
 RUN apt-get update 
 RUN apt-get -y upgrade
