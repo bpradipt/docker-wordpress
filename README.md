@@ -1,7 +1,12 @@
-This repo contains a recipe for making a [Docker](http://docker.io) container for Wordpress, using Linux, Apache and MySQL on Ubuntu running on IBM Power servers. 
+This repo contains a recipe for making a [Docker](http://docker.io) container
+for Wordpress, using Linux, Apache and MySQL on Ubuntu running on IBM Power
+servers. Additionally ssh server is also setup, allowing ssh based access to
+the container. Further key-based ssh is setup for vagrant user, to help with
+Vagrant usage. 
 
-Before building this ensure you have created a local utopic image by following these steps. 
-This is required since multi-architecture support is still not there in docker hub
+Before building this ensure you have created a local utopic image by following
+these steps.  This is required since multi-architecture support is still not
+there in docker hub
 ```
 sudo debootstrap --components=main,universe utopic utopic
 sudo tar -C utopic -c . | sudo docker import - local:utopic
@@ -15,7 +20,7 @@ sudo docker build -rm -t <yourname>/wordpress .
 
 Then run it, specifying your desired ports! Woo! 
 ```
-sudo docker run --name wordpress -d -p <http_port>:80 <yourname>/wordpress 
+sudo docker run --name wordpress -d -p <http_port>:80 <ssh_port>:22 <yourname>/wordpress 
 ```
 
 
